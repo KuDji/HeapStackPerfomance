@@ -11,6 +11,7 @@
 		8055CC0F2330BD9800C63D1F /* DispatchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055CC0E2330BD9800C63D1F /* DispatchTable.swift */; };
 		8055CC112330CD8A00C63D1F /* FinalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055CC102330CD8A00C63D1F /* FinalVariable.swift */; };
 		8055CC132330D30100C63D1F /* WitnessTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055CC122330D30100C63D1F /* WitnessTable.swift */; };
+		80D1744123312BD300DC5D6C /* TimeSpender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1744023312BD300DC5D6C /* TimeSpender.swift */; };
 		80FF7698232FB5F7006FF2AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF7697232FB5F7006FF2AE /* AppDelegate.swift */; };
 		80FF769A232FB5F7006FF2AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF7699232FB5F7006FF2AE /* ViewController.swift */; };
 		80FF769D232FB5F7006FF2AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80FF769B232FB5F7006FF2AE /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 		8055CC0E2330BD9800C63D1F /* DispatchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTable.swift; sourceTree = "<group>"; };
 		8055CC102330CD8A00C63D1F /* FinalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalVariable.swift; sourceTree = "<group>"; };
 		8055CC122330D30100C63D1F /* WitnessTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessTable.swift; sourceTree = "<group>"; };
+		80D1744023312BD300DC5D6C /* TimeSpender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpender.swift; sourceTree = "<group>"; };
 		80FF7694232FB5F7006FF2AE /* HeapStackPerfomance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeapStackPerfomance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FF7697232FB5F7006FF2AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80FF7699232FB5F7006FF2AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 				80FF769E232FB5F8006FF2AE /* Assets.xcassets */,
 				80FF76A0232FB5F8006FF2AE /* LaunchScreen.storyboard */,
 				80FF76A3232FB5F8006FF2AE /* Info.plist */,
+				80D1744023312BD300DC5D6C /* TimeSpender.swift */,
 			);
 			path = HeapStackPerfomance;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 				8055CC0D2330B72200C63D1F /* Generic.swift in Sources */,
 				8055CC0F2330BD9800C63D1F /* DispatchTable.swift in Sources */,
 				80FF76AC232FC46F006FF2AE /* ClassArrayVSStructArray.swift in Sources */,
+				80D1744123312BD300DC5D6C /* TimeSpender.swift in Sources */,
 				8055CC112330CD8A00C63D1F /* FinalVariable.swift in Sources */,
 				80FF7698232FB5F7006FF2AE /* AppDelegate.swift in Sources */,
 				8055CC132330D30100C63D1F /* WitnessTable.swift in Sources */,

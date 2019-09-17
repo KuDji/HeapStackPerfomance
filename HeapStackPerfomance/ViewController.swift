@@ -13,14 +13,14 @@ class ViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
 
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-//            contiguousArrayTest()
-//        }
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
-//            regularArrayTest()
-//        }
-//
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            contiguousArrayTest()
+        }
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            regularArrayTest()
+        }
+
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
 //            testClassArrayVsStructArray()
 //        }
