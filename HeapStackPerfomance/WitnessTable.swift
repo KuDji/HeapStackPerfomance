@@ -14,6 +14,8 @@ import Foundation
 // объект хранящий 3 блока по 8 бит для данных
 // либо ссылку на объект в памяти
 
+// MARK: - Helper struct
+
 private protocol FitnessStruct {
     var value0: Double { get set }
 }
@@ -40,7 +42,25 @@ private struct NotFitStruct: FitnessStruct {
     var value5 = 10.2
 }
 
+// MARK: - Result Variable's
+
+private var firArrayResult: CFAbsoluteTime = 0
+private var stillFitArrayResult: CFAbsoluteTime = 0
+private var notFitArrayResult: CFAbsoluteTime = 0
+
+// MARK: - Test
+
 func witnessTest() {
+    for _ in 0..<100 {
+        startTest()
+    }
+
+    print("Fir Array - \(firArrayResult/100)")
+    print("Still Fir Array - \(stillFitArrayResult/100)")
+    print("Not Fir Array - \(notFitArrayResult/100)")
+}
+
+private func startTest() {
 
     let witnessArrayFit0: Array<FitnessStruct> = Array(repeating: FitStruct0(), count: 1_000_000)
 
@@ -49,7 +69,7 @@ func witnessTest() {
     for i in 0..<1_000_000 {
         let _ = witnessArrayFit0[i].value0
     }
-    tf.finish("Fit array")
+    firArrayResult += tf.finish("Fit array")
 
     let witnessArrayFit1: Array<FitnessStruct> = Array(repeating: FitStruct1(), count: 1_000_000)
 
@@ -59,7 +79,7 @@ func witnessTest() {
     for i in 0..<1_000_000 {
         let _ = witnessArrayFit1[i].value0
     }
-    tf.finish("Still Fit array")
+    stillFitArrayResult += tf.finish("Still Fit array")
 
     let witnessArrayNotFit: Array<FitnessStruct> = Array(repeating: NotFitStruct(), count: 1_000_000)
 
@@ -69,5 +89,7 @@ func witnessTest() {
     for i in 0..<1_000_000 {
         let _ = witnessArrayNotFit[i].value0
     }
-    tf.finish("Not Fit array")
+    notFitArrayResult += tf.finish("Not Fit array")
+
+    sleep(1)
 }

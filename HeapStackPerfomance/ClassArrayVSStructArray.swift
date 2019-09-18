@@ -23,7 +23,21 @@ final class FinalClassArrayEntity {
     var value = 10
 }
 
+private var arrayStructResult: CFAbsoluteTime = 0
+private var arrayClassResult: CFAbsoluteTime = 0
+private var arrayFinalClassResult: CFAbsoluteTime = 0
+
 func testClassArrayVsStructArray() {
+    for _ in 0..<100 {
+        testStart()
+    }
+
+    print("Access to Struct Property - \(arrayStructResult/100)")
+    print("Access to Class Property - \(arrayClassResult/100)")
+    print("Access to Final Class Property - \(arrayFinalClassResult/100)")
+}
+
+private func testStart() {
     let testArrayStruct = Array(repeating: StructArrayEntity(), count: 1_000_000)
     let testArrayClass = Array(repeating: ClassArrayEntity(), count: 1_000_000)
     let testArrayFinalClass = Array(repeating: FinalClassArrayEntity(), count: 1_000_000)
@@ -34,17 +48,17 @@ func testClassArrayVsStructArray() {
     for i in testArrayStruct {
         let _ = i
     }
-    ts.finish("test Array Struct")
+    arrayStructResult += ts.finish("test Array Struct")
 
     ts.start()
     for i in testArrayClass {
         let _ = i
     }
-    ts.finish("test Array Class")
+    arrayClassResult += ts.finish("test Array Class")
 
     ts.start()
     for i in testArrayFinalClass {
         let _ = i
     }
-    ts.finish("test Array Final Class")
+    arrayFinalClassResult += ts.finish("test Array Final Class")
 }

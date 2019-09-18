@@ -4,6 +4,8 @@ import Foundation
 // - производительность вызова методов для классов хранящих несколько классов
 // и структур хранящих классы
 
+// MARK: - Helper Struct
+
 class DummyClass {
     var flag: Bool
     var count: Int
@@ -62,6 +64,50 @@ struct ContainerStruct {
     var dummy9: DummyClass
 }
 
+// MARK: - Variable
+
+private var structShellResult: CFAbsoluteTime = 0
+private var classShellResult: CFAbsoluteTime = 0
+
+// MARK: - Test
+
+func testDummyObject() {
+    for _ in 0..<100 {
+        startTest()
+    }
+
+    print("Struct Shell Perfomance - \(structShellResult/100)")
+    print("Class Shell Perfomance - \(classShellResult/100)")
+}
+
+private func startTest() {
+    /// Iteration count for execution
+    let testIterationCount: Int64 = 100_000
+
+    /// Create an array of dummy classes with different data
+    var dummies = ContiguousArray<DummyClass>()
+    for j in 0..<10
+    {
+        let dummy = DummyClass(flag: j % 2 == 0, count: j)
+        dummies.append(dummy)
+    }
+
+    let ts = TimeSpender()
+    ts.start()
+    calculateClassPerformance(with: dummies, iterations: testIterationCount)
+    structShellResult += ts.finish("Struct Shell Finish")
+
+    sleep(1)
+
+    ts.start()
+    calculateStructPerformance(with: dummies, iterations: testIterationCount)
+    classShellResult += ts.finish("Class Shell Finish")
+
+    sleep(1)
+}
+
+// MARK: - Testable Func
+
 @inline(never)
 func testClass(_ container: ContainerClass) -> Int {
     let value = simpleCalculationForClass(container)
@@ -105,8 +151,6 @@ func calculateClassPerformance(with dummies: ContiguousArray<DummyClass>, iterat
     for _ in 0..<iterations {
         result += testClass(container)
     }
-
-    print("Result: \(result)")
 }
 
 @inline(never)
@@ -130,31 +174,6 @@ func calculateStructPerformance(with dummies: ContiguousArray<DummyClass>, itera
     for _ in 0..<iterations {
         result += testStruct(container)
     }
-
-    print("Result: \(result)")
-}
-
-func testCallString() {
-
-    /// Iteration count for execution
-    let testIterationCount: Int64 = 100_000
-
-    /// Create an array of dummy classes with different data
-    var dummies = ContiguousArray<DummyClass>()
-    for j in 0..<10
-    {
-        let dummy = DummyClass(flag: j % 2 == 0, count: j)
-        dummies.append(dummy)
-    }
-
-    let ts = TimeSpender()
-    ts.start()
-    calculateClassPerformance(with: dummies, iterations: testIterationCount)
-    ts.finish("Struct Shell Finish")
-
-    ts.start()
-    calculateStructPerformance(with: dummies, iterations: testIterationCount)
-    ts.finish("Class Shell Finish")
 }
 
 

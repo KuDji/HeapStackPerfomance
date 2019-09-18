@@ -11,6 +11,8 @@ import Foundation
 // Тестируем:
 // - скорость вызова обычной переменной класса и с модификатором final
 
+// MARK: - Helper Struct
+
 private class AbstractClass {
 
     var value0 = 101
@@ -35,7 +37,23 @@ private class AbstractClass {
     final var value19 = 120
 }
 
+// MARK: - Result Variable's
+
+private var dispatchVarResult: CFAbsoluteTime = 0
+private var finalVarResult: CFAbsoluteTime = 0
+
+// MARK: - Test
+
 func testFinalVariable() {
+    for _ in 0..<100 {
+        startTest()
+    }
+
+    print("Dispatched Var - \(dispatchVarResult/100)")
+    print("Final Var - \(finalVarResult/100)")
+}
+
+private func startTest() {
 
     let testClass = AbstractClass()
 
@@ -44,11 +62,15 @@ func testFinalVariable() {
     for _ in 0..<1_000_000 {
         let _ = testClass.value0
     }
-    tf.finish("dispatched variable")
+    dispatchVarResult += tf.finish("dispatched variable")
+
+    sleep(1)
 
     tf.start()
     for _ in 0..<1_000_000 {
         let _ = testClass.value19
     }
-    tf.finish("final variable")
+    finalVarResult += tf.finish("final variable")
+
+    sleep(1)
 }

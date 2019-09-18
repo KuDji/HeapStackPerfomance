@@ -12,6 +12,8 @@ import Foundation
 // - сравнение функции принимающей протокол и generic функции
 // - сравнение скорость вызова функций generic и протокол на массиве основном на общем протоколе
 
+// MARK: - Helper struct
+
 private protocol BasicGeneric {
     func draw()
 }
@@ -36,6 +38,8 @@ private struct DrawSquare: BasicGeneric {
     }
 }
 
+// MARK: - Tested Func
+
 private func genericTest <T: BasicGeneric>(object: T) {
     object.draw()
 }
@@ -44,7 +48,27 @@ private func protocolTest(object: BasicGeneric) {
     object.draw()
 }
 
+// MARK: - Result Var's
+
+private var genericResult: CFAbsoluteTime = 0
+private var protocolResult: CFAbsoluteTime = 0
+private var genericArrayResult: CFAbsoluteTime = 0
+private var protocolArrayResult: CFAbsoluteTime = 0
+
+// MARK: - API
+
 func genericTestStart() {
+    for _ in 0..<100 {
+        startTest()
+    }
+
+    print("Generic func test = \(genericResult/100)")
+    print("Protocol func test = \(protocolResult/100)")
+    print("Generic Array func test = \(genericArrayResult/100)")
+    print("Protocol Array func test = \(protocolArrayResult/100)")
+}
+
+private func startTest() {
     let pointObject = DrawPoint(x: 3, y: 3)
     let squareObject = DrawSquare(width: 3, height: 3)
 
@@ -55,13 +79,15 @@ func genericTestStart() {
     for _ in 0...1_000_000 {
         genericTest(object: pointObject)
     }
-    ts.finish("Generic Test")
+    genericResult += ts.finish("Generic Test")
+
+    sleep(1)
 
     ts.start()
     for _ in 0...1_000_000 {
         protocolTest(object: pointObject)
     }
-    ts.finish("Protocol Test")
+    protocolResult += ts.finish("Protocol Test")
 
     // Geterogeneous test
 
@@ -74,11 +100,15 @@ func genericTestStart() {
         arrayOfPoints.append(squareObject)
     }
 
+    sleep(1)
+
     ts.start()
     for i in 0..<arrayOfPoints.count {
         protocolTest(object: arrayOfPoints[i])
     }
-    ts.finish("Protocol Array Test")
+    genericArrayResult += ts.finish("Protocol Array Test")
+
+    sleep(1)
 
     ts.start()
     for i in 0..<arrayOfPoints.count {
@@ -90,5 +120,7 @@ func genericTestStart() {
             assert(false, "Cannot case object to BasicGeneric Protocol")
         }
     }
-    ts.finish("Generic Array Test")
+    protocolArrayResult += ts.finish("Generic Array Test")
+
+    sleep(1)
 }

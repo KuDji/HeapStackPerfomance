@@ -15,6 +15,8 @@ import Foundation
 // для final класса который имеет несколько предков
 // и так же имеет таблицу диспетчеризации
 
+// MARK: - Base Classes
+
 private class BasicClass0 {
 
     func baseFunc0() {
@@ -106,7 +108,31 @@ private final class BasicClassFinal0: BasicClass9 {
     }
 }
 
+// MARK: - Result Variable's
+
+private var parentCallResult: CFAbsoluteTime = 0
+private var firstSubClassCallResult: CFAbsoluteTime = 0
+private var lastSubClassCallParentFuncResult: CFAbsoluteTime = 0
+private var lastSubClassCallSelfFuncResult: CFAbsoluteTime = 0
+private var finalClassCallSelfResult: CFAbsoluteTime = 0
+private var finalClassCallParentFuncResult: CFAbsoluteTime = 0
+
+// MARK: - Test
+
 func testDispatchTable() {
+    for _ in 0..<100 {
+        startTest()
+    }
+
+    print("Parent Call His Func - \(parentCallResult/100)")
+    print("First Subclass Call Parent Func - \(firstSubClassCallResult/100)")
+    print("Last Subclass Call Parent Func - \(lastSubClassCallParentFuncResult/100)")
+    print("Last Subclass Call Self Func - \(lastSubClassCallSelfFuncResult/100)")
+    print("Final class call self func - \(finalClassCallSelfResult/100)")
+    print("Final class call parent func - \(finalClassCallParentFuncResult/100)")
+}
+
+private func startTest() {
 
     let tf = TimeSpender()
     tf.start()
@@ -114,40 +140,52 @@ func testDispatchTable() {
         let generalParent = BasicClass0()
         generalParent.baseFunc0()
     }
-    tf.finish("Parent Call")
+    parentCallResult += tf.finish("Parent Call")
+
+    sleep(1)
 
     tf.start()
     for _ in 0...1_000_000 {
         let firstsubClass = BasicClass1()
         firstsubClass.baseFunc0()
     }
-    tf.finish("first subclass call parent func")
+    firstSubClassCallResult += tf.finish("first subclass call parent func")
+
+    sleep(1)
 
     tf.start()
     for _ in 0...1_000_000 {
         let lastsubClass = BasicClass10()
         lastsubClass.baseFunc0()
     }
-    tf.finish("last subclass call parent func")
+    lastSubClassCallParentFuncResult += tf.finish("last subclass call parent func")
+
+    sleep(1)
 
     tf.start()
     for _ in 0...1_000_000 {
         let lastsubClass = BasicClass10()
         lastsubClass.baseFunc10()
     }
-    tf.finish("last subclass call self func")
+    lastSubClassCallSelfFuncResult += tf.finish("last subclass call self func")
+
+    sleep(1)
 
     tf.start()
     for _ in 0...1_000_000 {
         let finalizeClass = BasicClassFinal()
         finalizeClass.baseFunc()
     }
-    tf.finish("finalize class call self func")
+    finalClassCallSelfResult += tf.finish("finalize class call self func")
+
+    sleep(1)
 
     tf.start()
     for _ in 0...1_000_000 {
         let finalizeClass = BasicClassFinal0()
         finalizeClass.baseFunc11()
     }
-    tf.finish("finalize class with classs hierarchy call self func")
+    finalClassCallParentFuncResult += tf.finish("finalize class with class hierarchy call self func")
+
+    sleep(1)
 }

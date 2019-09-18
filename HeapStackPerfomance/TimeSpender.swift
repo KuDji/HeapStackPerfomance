@@ -16,7 +16,10 @@ class TimeSpender {
         strartTime = CFAbsoluteTimeGetCurrent()
     }
 
-    func finish(_ log: String) {
-        print("Time - \(CFAbsoluteTimeGetCurrent() - strartTime), \(log)")
+    @discardableResult
+    func finish(_ log: String) -> CFAbsoluteTime {
+        let finishTime = CFAbsoluteTimeGetCurrent()
+        let diff = finishTime - strartTime
+        return diff
     }
 }
