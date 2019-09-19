@@ -55,9 +55,9 @@ func witnessTest() {
         startTest()
     }
 
-    print("Fir Array - \(firArrayResult/100)")
-    print("Still Fir Array - \(stillFitArrayResult/100)")
-    print("Not Fir Array - \(notFitArrayResult/100)")
+    print("Fit Array - \(firArrayResult/100)")
+    print("Still Fit Array - \(stillFitArrayResult/100)")
+    print("Not Fit Array - \(notFitArrayResult/100)")
 }
 
 private func startTest() {

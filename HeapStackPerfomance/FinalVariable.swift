@@ -41,6 +41,8 @@ private class AbstractClass {
 
 private var dispatchVarResult: CFAbsoluteTime = 0
 private var finalVarResult: CFAbsoluteTime = 0
+private var dispatchVarPreInitResult: CFAbsoluteTime = 0
+private var finalVarPreInitResult: CFAbsoluteTime = 0
 
 // MARK: - Test
 
@@ -48,18 +50,45 @@ func testFinalVariable() {
     for _ in 0..<100 {
         startTest()
     }
+    for _ in 0..<100 {
+        startTestPreInit()
+    }
 
     print("Dispatched Var - \(dispatchVarResult/100)")
     print("Final Var - \(finalVarResult/100)")
+    print("---------------")
+    print("Dispatched Var Only One Object Created - \(dispatchVarPreInitResult/100)")
+    print("Final Var Only One Object Created - \(finalVarPreInitResult/100)")
 }
 
-private func startTest() {
+private func startTestPreInit() {
 
     let testClass = AbstractClass()
 
     let tf = TimeSpender()
     tf.start()
-    for _ in 0..<1_000_000 {
+    for _ in 0..<1_000_00 {
+        let _ = testClass.value0
+    }
+    dispatchVarPreInitResult += tf.finish("dispatched variable")
+
+    sleep(1)
+
+    tf.start()
+    for _ in 0..<1_000_00 {
+        let _ = testClass.value19
+    }
+    finalVarPreInitResult += tf.finish("final variable")
+
+    sleep(1)
+}
+
+private func startTest() {
+
+    let tf = TimeSpender()
+    tf.start()
+    for _ in 0..<1_000_00 {
+        let testClass = AbstractClass()
         let _ = testClass.value0
     }
     dispatchVarResult += tf.finish("dispatched variable")
@@ -67,7 +96,8 @@ private func startTest() {
     sleep(1)
 
     tf.start()
-    for _ in 0..<1_000_000 {
+    for _ in 0..<1_000_00 {
+        let testClass = AbstractClass()
         let _ = testClass.value19
     }
     finalVarResult += tf.finish("final variable")

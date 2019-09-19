@@ -66,7 +66,6 @@ struct ContiguessVSArrayResult {
     var accessArrayStructValue: CFAbsoluteTime = 0
 
     func printAverageResults() {
-        print("\n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n")
 
         print("funcCallContiguousClassRef - \(funcCallContiguousClassRef/10)")
         print("funcCallContiguousStructRef - \(funcCallContiguousStructRef/10)")

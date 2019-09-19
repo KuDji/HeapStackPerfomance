@@ -84,8 +84,6 @@ private func startTest() {
 
     // MARK: - Function Call
 
-    print("Вызов функции \n")
-
     ts.start()
     for _ in 0..<1_000_000 {
         contiguousCallClass(contiguousClassRef)
@@ -117,7 +115,6 @@ private func startTest() {
     result.funcCallContiguousStructValue += ts.finish("ContiguousArray - Struct + Double")
 
     sleep(1)
-    print("--------------------")
 
     ts.start()
     for _ in 0..<1_000_000 {
@@ -150,8 +147,6 @@ private func startTest() {
     result.funcCallArrayStructValue += ts.finish("Array - Struct + Double")
 
     sleep(1)
-    print("--------------------")
-    print("Вызов функции Inline \n")
 
     // MARK: - Function Call Inline
 
@@ -186,7 +181,6 @@ private func startTest() {
     result.inlineContiguousStructValue += ts.finish("ContiguousArray(Inline) - Struct + Double")
 
     sleep(1)
-    print("--------------------")
 
     ts.start()
     for _ in 0..<1_000_000 {
@@ -219,8 +213,6 @@ private func startTest() {
     result.inlineArrayStructValue += ts.finish("Array(Inline) - Struct + Double")
 
     sleep(1)
-    print("--------------------")
-    print("Удаление объектов \n")
 
     // MARK: - Delete Object from Array
 
@@ -255,7 +247,6 @@ private func startTest() {
     result.deleteContiguousStructValue += ts.finish("ContiguousArray(Delete) - Struct + Double")
 
     sleep(1)
-    print("--------------------")
 
     ts.start()
     for _ in 0..<1_000_00 {
@@ -288,8 +279,6 @@ private func startTest() {
     result.deleteArrayStructValue += ts.finish("Array(Delete) - Struct + Double")
 
     sleep(1)
-    print("--------------------")
-    print("Добавление объектов \n")
 
     // MARK: - Add Object from Array
 
@@ -324,7 +313,6 @@ private func startTest() {
     result.appendContiguousStructValue += ts.finish("ContiguousArray(Append) - Struct + Double")
 
     sleep(1)
-    print("--------------------")
 
     ts.start()
     for _ in 0..<1_000_00 {
@@ -357,8 +345,6 @@ private func startTest() {
     result.appendArrayStructValue += ts.finish("Array(Append) - Struct + Double")
 
     sleep(1)
-    print("--------------------")
-    print("Доступ к объекту \n")
 
     ts.start()
     for i in contiguousClassRef {
@@ -391,7 +377,6 @@ private func startTest() {
     result.accessContiguousStructValue += ts.finish("ContiguousArray(Access) - Struct + Double")
 
     sleep(1)
-    print("--------------------")
 
     ts.start()
     for i in arrayClassRef {
