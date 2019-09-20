@@ -12,6 +12,8 @@
 		8055CC0F2330BD9800C63D1F /* DispatchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055CC0E2330BD9800C63D1F /* DispatchTable.swift */; };
 		8055CC112330CD8A00C63D1F /* FinalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055CC102330CD8A00C63D1F /* FinalVariable.swift */; };
 		8055CC132330D30100C63D1F /* WitnessTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055CC122330D30100C63D1F /* WitnessTable.swift */; };
+		806257182334BD77008ED41E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 806257172334BD77008ED41E /* XCTest.framework */; };
+		808ADF882334B8EC001AF97A /* PerfomanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808ADF872334B8EC001AF97A /* PerfomanceTests.swift */; };
 		80D1744123312BD300DC5D6C /* TimeSpender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80D1744023312BD300DC5D6C /* TimeSpender.swift */; };
 		80FF7698232FB5F7006FF2AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF7697232FB5F7006FF2AE /* AppDelegate.swift */; };
 		80FF769A232FB5F7006FF2AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF7699232FB5F7006FF2AE /* ViewController.swift */; };
@@ -23,12 +25,26 @@
 		80FF76AE232FCB7D006FF2AE /* Shell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FF76AD232FCB7D006FF2AE /* Shell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		808ADF8A2334B8EC001AF97A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80FF768C232FB5F7006FF2AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 80FF7693232FB5F7006FF2AE;
+			remoteInfo = HeapStackPerfomance;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		805125502334B68200ED583B /* ContiguessVSArrayResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContiguessVSArrayResult.swift; sourceTree = "<group>"; };
 		8055CC0C2330B72200C63D1F /* Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generic.swift; sourceTree = "<group>"; };
 		8055CC0E2330BD9800C63D1F /* DispatchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTable.swift; sourceTree = "<group>"; };
 		8055CC102330CD8A00C63D1F /* FinalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalVariable.swift; sourceTree = "<group>"; };
 		8055CC122330D30100C63D1F /* WitnessTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WitnessTable.swift; sourceTree = "<group>"; };
+		806257172334BD77008ED41E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Platforms/iPhoneOS.platform/Developer/Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		808ADF852334B8EC001AF97A /* PerfomanceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfomanceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		808ADF872334B8EC001AF97A /* PerfomanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerfomanceTests.swift; sourceTree = "<group>"; };
+		808ADF892334B8EC001AF97A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80D1744023312BD300DC5D6C /* TimeSpender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSpender.swift; sourceTree = "<group>"; };
 		80FF7694232FB5F7006FF2AE /* HeapStackPerfomance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeapStackPerfomance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80FF7697232FB5F7006FF2AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +59,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		808ADF822334B8EC001AF97A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				806257182334BD77008ED41E /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80FF7691232FB5F7006FF2AE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,11 +77,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		806257162334BD76008ED41E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				806257172334BD77008ED41E /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		808ADF862334B8EC001AF97A /* PerfomanceTests */ = {
+			isa = PBXGroup;
+			children = (
+				808ADF872334B8EC001AF97A /* PerfomanceTests.swift */,
+				808ADF892334B8EC001AF97A /* Info.plist */,
+			);
+			path = PerfomanceTests;
+			sourceTree = "<group>";
+		};
 		80FF768B232FB5F7006FF2AE = {
 			isa = PBXGroup;
 			children = (
 				80FF7696232FB5F7006FF2AE /* HeapStackPerfomance */,
+				808ADF862334B8EC001AF97A /* PerfomanceTests */,
 				80FF7695232FB5F7006FF2AE /* Products */,
+				806257162334BD76008ED41E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				80FF7694232FB5F7006FF2AE /* HeapStackPerfomance.app */,
+				808ADF852334B8EC001AF97A /* PerfomanceTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,6 +138,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		808ADF842334B8EC001AF97A /* PerfomanceTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 808ADF8E2334B8EC001AF97A /* Build configuration list for PBXNativeTarget "PerfomanceTests" */;
+			buildPhases = (
+				808ADF812334B8EC001AF97A /* Sources */,
+				808ADF822334B8EC001AF97A /* Frameworks */,
+				808ADF832334B8EC001AF97A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				808ADF8B2334B8EC001AF97A /* PBXTargetDependency */,
+			);
+			name = PerfomanceTests;
+			productName = PerfomanceTests;
+			productReference = 808ADF852334B8EC001AF97A /* PerfomanceTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		80FF7693232FB5F7006FF2AE /* HeapStackPerfomance */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80FF76A6232FB5F8006FF2AE /* Build configuration list for PBXNativeTarget "HeapStackPerfomance" */;
@@ -117,10 +179,14 @@
 		80FF768C232FB5F7006FF2AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1100;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = Anatoliy;
 				TargetAttributes = {
+					808ADF842334B8EC001AF97A = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = 80FF7693232FB5F7006FF2AE;
+					};
 					80FF7693232FB5F7006FF2AE = {
 						CreatedOnToolsVersion = 10.3;
 					};
@@ -140,11 +206,19 @@
 			projectRoot = "";
 			targets = (
 				80FF7693232FB5F7006FF2AE /* HeapStackPerfomance */,
+				808ADF842334B8EC001AF97A /* PerfomanceTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		808ADF832334B8EC001AF97A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80FF7692232FB5F7006FF2AE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -158,6 +232,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		808ADF812334B8EC001AF97A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				808ADF882334B8EC001AF97A /* PerfomanceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		80FF7690232FB5F7006FF2AE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -177,6 +259,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		808ADF8B2334B8EC001AF97A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 80FF7693232FB5F7006FF2AE /* HeapStackPerfomance */;
+			targetProxy = 808ADF8A2334B8EC001AF97A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		80FF769B232FB5F7006FF2AE /* Main.storyboard */ = {
@@ -198,6 +288,48 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		808ADF8C2334B8EC001AF97A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX7EXQ2XD6;
+				INFOPLIST_FILE = PerfomanceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AMProgrammer.PerfomanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeapStackPerfomance.app/HeapStackPerfomance";
+			};
+			name = Debug;
+		};
+		808ADF8D2334B8EC001AF97A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = WX7EXQ2XD6;
+				INFOPLIST_FILE = PerfomanceTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = AMProgrammer.PerfomanceTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeapStackPerfomance.app/HeapStackPerfomance";
+			};
+			name = Release;
+		};
 		80FF76A4232FB5F8006FF2AE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -354,6 +486,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		808ADF8E2334B8EC001AF97A /* Build configuration list for PBXNativeTarget "PerfomanceTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808ADF8C2334B8EC001AF97A /* Debug */,
+				808ADF8D2334B8EC001AF97A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		80FF768F232FB5F7006FF2AE /* Build configuration list for PBXProject "HeapStackPerfomance" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

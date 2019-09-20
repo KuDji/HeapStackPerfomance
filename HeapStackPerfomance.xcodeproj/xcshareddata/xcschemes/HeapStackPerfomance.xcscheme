@@ -37,6 +37,16 @@
          </BuildableReference>
       </MacroExpansion>
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "808ADF842334B8EC001AF97A"
+               BuildableName = "PerfomanceTests.xctest"
+               BlueprintName = "PerfomanceTests"
+               ReferencedContainer = "container:HeapStackPerfomance.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

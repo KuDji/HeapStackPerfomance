@@ -17,105 +17,109 @@ import Foundation
 
 // MARK: - Base Classes
 
-private class BasicClass0 {
+public class BasicClass0 {
 
-    func baseFunc0() {
+    public func baseFunc0() {
+        let _ = 0
+    }
+
+    public init() {}
+}
+
+public class BasicClass1: BasicClass0 {
+
+    public func baseFunc1() {
         let _ = 0
     }
 }
 
-private class BasicClass1: BasicClass0 {
+public class BasicClass2: BasicClass1 {
 
-    func baseFunc1() {
+    public func baseFunc2() {
         let _ = 0
     }
 }
 
-private class BasicClass2: BasicClass1 {
+public class BasicClass3: BasicClass2 {
 
-    func baseFunc2() {
+    public func baseFunc3() {
         let _ = 0
     }
 }
 
-private class BasicClass3: BasicClass2 {
+public class BasicClass4: BasicClass3 {
 
-    func baseFunc3() {
+    public func baseFunc4() {
         let _ = 0
     }
 }
 
-private class BasicClass4: BasicClass3 {
+public class BasicClass5: BasicClass4 {
 
-    func baseFunc4() {
+    public func baseFunc5() {
         let _ = 0
     }
 }
 
-private class BasicClass5: BasicClass4 {
+public class BasicClass6: BasicClass5 {
 
-    func baseFunc5() {
+    public func baseFunc6() {
         let _ = 0
     }
 }
 
-private class BasicClass6: BasicClass5 {
+public class BasicClass7: BasicClass6 {
 
-    func baseFunc6() {
+    public func baseFunc7() {
         let _ = 0
     }
 }
 
-private class BasicClass7: BasicClass6 {
+public class BasicClass8: BasicClass7 {
 
-    func baseFunc7() {
+    public func baseFunc8() {
         let _ = 0
     }
 }
 
-private class BasicClass8: BasicClass7 {
+public class BasicClass9: BasicClass8 {
 
-    func baseFunc8() {
+    public func baseFunc9() {
         let _ = 0
     }
 }
 
-private class BasicClass9: BasicClass8 {
+public class BasicClass10: BasicClass9 {
 
-    func baseFunc9() {
+    public func baseFunc10() {
         let _ = 0
     }
 }
 
-private class BasicClass10: BasicClass9 {
+public final class BasicClassFinal {
 
-    func baseFunc10() {
+    public func baseFunc() {
         let _ = 0
     }
+
+    public init() {}
 }
 
-private final class BasicClassFinal {
+public final class BasicClassFinal0: BasicClass9 {
 
-    func baseFunc() {
-        let _ = 0
-    }
-}
-
-private final class BasicClassFinal0: BasicClass9 {
-
-    func baseFunc11() {
+    public func baseFunc11() {
         let _ = 0
     }
 }
 
 // MARK: - Result Variable's
 
-private var parentCallResult: CFAbsoluteTime = 0
-private var firstSubClassCallResult: CFAbsoluteTime = 0
-private var lastSubClassCallParentFuncResult: CFAbsoluteTime = 0
-private var lastSubClassCallSelfFuncResult: CFAbsoluteTime = 0
-private var finalClassCallSelfResult: CFAbsoluteTime = 0
-private var finalClassCallParentFuncResult: CFAbsoluteTime = 0
+var parentCallResult: CFAbsoluteTime = 0
+var firstSubClassCallResult: CFAbsoluteTime = 0
+var lastSubClassCallParentFuncResult: CFAbsoluteTime = 0
+var lastSubClassCallSelfFuncResult: CFAbsoluteTime = 0
+var finalClassCallSelfResult: CFAbsoluteTime = 0
+var finalClassCallParentFuncResult: CFAbsoluteTime = 0
 
 // MARK: - Test
 
