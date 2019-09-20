@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		805125512334B68200ED583B /* ContiguessVSArrayResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805125502334B68200ED583B /* ContiguessVSArrayResult.swift */; };
 		8055CC0D2330B72200C63D1F /* Generic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055CC0C2330B72200C63D1F /* Generic.swift */; };
 		8055CC0F2330BD9800C63D1F /* DispatchTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055CC0E2330BD9800C63D1F /* DispatchTable.swift */; };
 		8055CC112330CD8A00C63D1F /* FinalVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8055CC102330CD8A00C63D1F /* FinalVariable.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		805125502334B68200ED583B /* ContiguessVSArrayResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContiguessVSArrayResult.swift; sourceTree = "<group>"; };
 		8055CC0C2330B72200C63D1F /* Generic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generic.swift; sourceTree = "<group>"; };
 		8055CC0E2330BD9800C63D1F /* DispatchTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatchTable.swift; sourceTree = "<group>"; };
 		8055CC102330CD8A00C63D1F /* FinalVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalVariable.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				80FF76A9232FB609006FF2AE /* ContiguousArray+Array.swift */,
 				80FF76AB232FC46F006FF2AE /* ClassArrayVSStructArray.swift */,
 				8055CC0C2330B72200C63D1F /* Generic.swift */,
+				805125502334B68200ED583B /* ContiguessVSArrayResult.swift */,
 				8055CC0E2330BD9800C63D1F /* DispatchTable.swift */,
 				8055CC122330D30100C63D1F /* WitnessTable.swift */,
 				8055CC102330CD8A00C63D1F /* FinalVariable.swift */,
@@ -163,6 +166,7 @@
 				80FF769A232FB5F7006FF2AE /* ViewController.swift in Sources */,
 				80FF76AE232FCB7D006FF2AE /* Shell.swift in Sources */,
 				8055CC0D2330B72200C63D1F /* Generic.swift in Sources */,
+				805125512334B68200ED583B /* ContiguessVSArrayResult.swift in Sources */,
 				8055CC0F2330BD9800C63D1F /* DispatchTable.swift in Sources */,
 				80FF76AC232FC46F006FF2AE /* ClassArrayVSStructArray.swift in Sources */,
 				80D1744123312BD300DC5D6C /* TimeSpender.swift in Sources */,
